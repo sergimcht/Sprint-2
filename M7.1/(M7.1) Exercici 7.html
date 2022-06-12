@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <h1>(M7.1) Exercici 7</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;
+
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Fer un programa on l’usuari introdueix per pantalla un caràcter i un número. 
+            El programa imprimeix per pantalla un quadrat amb la mida i el caràcter introduïts per l’usuari.<br>
+
+            Exemple:<br>
+            
+            % % % % %<br>
+            
+            % % % % %<br>
+            
+            % % % % %<br>
+            
+            % % % % %<br>
+            
+            % % % % %<br></p></div>
+        <p></p>
+        <div id="inputs"><p>Introdueix un caràcter i un numero per crear un quadrat: <br></p>
+        <p><input type="text" id="caracter" placeholder="Caràcter"/>
+        <input type="number" id="numero" placeholder="Numero"/>
+        <div class="boton"><input type="button" onClick="mostrar()" Value="Calcular"/></p></div></div>
+        <div id="resultat"><p id="frase"></p></div>
+          
+    <script>
+        function mostrar() {
+
+            let carac, num, fila, contenido, i, k;
+
+            carac = document.getElementById("caracter").value;
+            num = parseInt(document.getElementById("numero").value);
+            fila = "";
+            contenido = "";  
+            
+            for (i=0; i<num; i++) {
+                fila += carac;
+            };
+            for (k=0; k<num; k++) {
+                contenido += fila + "<br>";
+            };
+            
+            console.log(carac, num, fila, contenido, i, k);
+            document.getElementById("frase").innerHTML=contenido;
+        }           
+    </script>
+    </body>
+</html>

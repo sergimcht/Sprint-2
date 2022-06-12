@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <h1>(M7.1) Exercici 2</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;
+
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Un professor vol calcular les mitges de les notes de tota la classe. Crea una aplicació on l'usuari introduirà un número per pantalla 
+            (el número correspon al número de notes que vol introduir) i el programa li demanarà que introdueixi les notes de tots els alumnes. Un cop les notes han sigut introduides, el programa retorna el següent:<br>
+            
+            · Si la nota mitjana és menor que 5: "La nota mitjana de la classe està suspesa. Els alumnes haurien de preguntar els seus dubtes i treballar més".<br>
+            
+            · Si la nota és inferior a 7: "La nota mitjana de la classe és bona, però els alumnes haurien de millorar el treball personal".<br>
+            
+            · Per la resta de casos, el missatge ha de ser: "Enhorabona! La nota mitjana de la classe es correspon amb l'esforç realitzat".<br>
+            
+            
+            (Les notes han d'estar compreses entre 0 i 10).<br></p></div>
+        <p></p>
+        <div id="inputs"><p>Introdueix el numero de notes a evaluar: <br></p>
+        <p><input type="number" min="0" id="num_notas" placeholder="Numero de notes"/>
+        <div class="boton"><input type="button" onClick="mostrar()" Value="Calcular"/></p></div></div>
+        <div id="resultat"><p id="frase"></p></div>
+          
+    <script>
+        function mostrar() {
+
+            let num_notas, raw_notas, suma_notas, media,  media_dec, i, resposta;
+            num_notas = Number(document.getElementById("num_notas").value);
+            suma_notas = 0;
+            i=1
+            
+            while (i <= num_notas) {
+                raw_notas = Number(prompt("Introdueix la nota numero " + (i) + ":", "Escriu una nota."));
+                if ((raw_notas >= 0) && (raw_notas <= 10)) {
+                    suma_notas += raw_notas
+                    i++
+                } else {
+                    alert("Les notes han d'estar compreses entre 0 i 10!")
+                }
+            }
+
+            media = suma_notas / num_notas;
+            media_dec = media.toFixed(2)
+            
+            if (media<5) {
+                resposta = "La nota mitjana de la classe està suspesa. Els alumnes haurien de preguntar els seus dubtes i treballar més."
+            } else if (media >=5 && media<=7) {
+                resposta = "La nota mitjana de la classe és bona, però els alumnes haurien de millorar el treball personal."
+            } else if (media>7 && media <=10) {
+                resposta = "Enhorabona! La nota mitjana de la classe es correspon amb l'esforç realitzat"
+            } else {
+                resposta = "Hi ha un error a les dades introduïdes. Torna a començar."
+            }
+            
+            document.getElementById("frase").innerHTML="La nota mitjana de la classe és " + media_dec + ". " + resposta;
+            console.log(num_notas, suma_notas, media, i, resposta);
+        }           
+    </script>
+    </body>
+</html>

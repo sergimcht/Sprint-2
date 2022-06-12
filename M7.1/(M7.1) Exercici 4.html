@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <h1>(M7.1) Exercici 4</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;
+
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>L’usuari ha d’introduir dos números, el programa retornarà “Un dels dos números és negatiu”, només si un dels dos números és negatiu.<br></p></div>
+        <p></p>
+        <div id="inputs"><p>Introdueix dos numeros qualsevol per saber si un d'ells és negatiu: <br></p>
+        <p><input type="number" id="num1" placeholder="Numero 1"/>
+        <input type="number" id="num2" placeholder="Numero 2"/>
+        <div class="boton"><input type="button" onClick="mostrar()" Value="Calcular"/></p></div></div>
+        <div id="resultat"><p id="frase"></p></div>
+          
+    <script>
+        function mostrar() {
+
+            let num1, num2, qualitat;
+
+            num1 = Number(document.getElementById("num1").value);
+            num2 = Number(document.getElementById("num2").value);
+            
+            if (((num1<0) && (num2<0)) || ((num1>0) && (num2>0))) {
+                qualitat = "Els dos numeros tenen el mateix signe."
+            } else {
+                qualitat = "Un dels dos números és negatiu."
+            }
+            
+            document.getElementById("frase").innerHTML= qualitat;
+        }           
+    </script>
+    </body>
+</html>

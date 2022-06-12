@@ -1,0 +1,128 @@
+<html>
+    <head>
+    <style>
+        body{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, monospace; background-color: #ffc9ea; color: #37667e; display: flex;
+        flex-direction: column; align-items: center; width: 100vw; text-align: center}
+
+        #enunciat{width: 85%; background: #ff71c8; padding: 15px; line-height: 25px; border-radius: 20px; font-size:22px; font-weight: 500; color: rgb(0, 0, 0)}
+
+        #subenunciat{font-size:26px; font-weight: 700; color: rgb(0, 0, 0)}
+
+        #numdni{width: 10em; border-radius: 10px; border: 2px solid #6e1c4f; background: #ff71c8; color: #000000; padding: 5px 10px; font-weight: 700; font-size:22px}
+
+        #letradni{width: 5em; border-radius: 10px; border: 2px solid #6e1c4f; background: #ff71c8; color: #000000; padding: 5px 10px; font-weight: 700; font-size:22px}
+                
+        button{padding: 10px 20px; border-radius: 30px; background: #ff71c8; border: 2px solid #6e1c4f; color: rgb(0, 0, 0); outline: none; cursor: pointer; 
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 500; font-size:20px; transition: all 700ms ease}
+
+        button:hover{border: 2px solid #ff71c8; color: #000000; background: #ffd1ed; transform: translateY(5px)}
+
+        table {background-color: #ffffffa1; border-radius: 30px; font-weight: 500; color: black; margin: auto}
+        
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>L’usuari ha d’introduir un DNI i el programa ha de dir si la lletra és correcte o no amb el nombre de DNI. Si la lletra no és correcta, ha de dir quina lletra és la correcta.<br>
+
+            Per calcular la lletra DNI has de prendre el número de DNI a verificar i dividir-lo entre 23. La resta es reemplaça per una lletra que ja està assignada a aquest nombre mitjançant la taula adjunta.<br></p>
+            <table width="90%">
+                <tr>
+                    <th>Resto</th>
+                    <td>0</td>   
+                   <td>1</td>   
+                   <td>2</td>   
+                   <td>3</td>   
+                   <td>4</td>   
+                   <td>5</td>   
+                   <td>6</td>   
+                   <td>7</td>   
+                   <td>8</td>   
+                   <td>9</td>   
+                   <td>10</td>   
+                   <td>11</td>
+                   <td>12</td>   
+                   <td>13</td>   
+                   <td>14</td>   
+                   <td>15</td>   
+                   <td>16</td>   
+                   <td>17</td>   
+                   <td>18</td>   
+                   <td>19</td>   
+                   <td>20</td>   
+                   <td>21</td>   
+                   <td>22</td>
+                </tr><tr>
+                   <th>Letra</th>
+                   <td>T</td>   
+                   <td>R</td>   
+                   <td>W</td>   
+                   <td>A</td>   
+                   <td>G</td>   
+                   <td>M</td>   
+                   <td>Y</td>   
+                   <td>F</td>   
+                   <td>P</td>   
+                   <td>D</td>   
+                   <td>X</td>   
+                   <td>B</td>
+                   <td>N</td>   
+                   <td>J</td>   
+                   <td>Z</td>   
+                   <td>S</td>   
+                   <td>Q</td>   
+                   <td>V</td>   
+                   <td>H</td>   
+                   <td>L</td>   
+                   <td>C</td>   
+                   <td>K</td>   
+                   <td>E</td>
+                </tr></table>
+        </div>
+        <div id="subenunciat"><p>Introdueix un número de DNI: <br></p>
+        <input type="number" id="numdni" placeholder="NÚM DEL DNI" maxlength="8" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, 8);"/>
+        <input type="text" maxlength="1" style="text-transform:uppercase" id="letradni" placeholder="Lletra" maxlength="8"/>
+        <button onclick="validar()">Comprovar</button>
+        <div class="resultat"><p id="SiONo"></p></div>
+        <div class="resultat"><p id="ElCorrecto"></p></div>
+        
+          
+    <script>
+        "use strict"
+        function calcular(numero) { // recibe dni y calcula la letra
+            let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            let letra = letras.charAt(numero);
+
+            return letra;
+        }
+
+        function comparar(numero, letraUser) { // coge dni, lo envia a calcular y compara si la letra es correcta
+            let resto = (numero % 23);
+            let letraCorrecta = calcular(resto);
+            if (letraUser == letraCorrecta) {
+                document.getElementById("SiONo").innerHTML= "El DNI " + numero + "-" + letraUser + " és correcte.";
+                document.getElementById("ElCorrecto").innerHTML= "";
+            } else {
+                document.getElementById("SiONo").innerHTML= "El DNI " + numero + "-" + letraUser + " no és correcte.";
+                document.getElementById("ElCorrecto").innerHTML= "La lletra correcta és la " + letraCorrecta + ".";
+            }
+        }
+
+        function validar() { //recibe input y los valida
+            let numero = document.getElementById("numdni").value;
+            numero = numero.padStart(8, "0");
+            let letra = document.getElementById("letradni").value;
+            letra = letra.toUpperCase();
+            
+            if (letra == 0) {
+                alert("El camp de la lletra es troba buit!");
+            } else if (numero <= 0) {
+                alert("El camp del número es troba buit o és un número negtiu!");
+            } else if ((letra >= 0) && (letra <= 9)) {
+                alert("La lletra no pot ser un número!");
+            } else {
+                comparar(numero, letra);
+            }
+        }          
+    </script>
+    </body>
+</html>

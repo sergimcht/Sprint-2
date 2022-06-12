@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <h1>(M6) Exercici 2</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;
+
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Aquest programa calcula l'edat mitjana d'un número de persones introduït per teclat.<br>
+
+            S'ha de crear una funció que s'encarregui de demanar les edats a l'usuari i de calcular l'edat mitjana.<br>
+            
+            · La funció rebrà per paràmetre el nº de persones a qui ha de demanar l'edat.<br>
+            · L'edat de les persones només serà vàlida si està compresa entre 0 i 120 anys.<br>
+            · La mitjana de les edats introduïdes s'ha de retornar per la funció (return).<br></p></div>
+        <p></p>
+        <div id="inputs"><p>Especifica el numero d'edats a introduïr: <br></p>
+        <p><input type="number" min="0" id="num_edades" placeholder="Numero d'edats"/>
+        <div class="boton"><input type="button" onClick="mostrar()" Value="Procedir"/></p></div></div>
+        <div id="resultat"><p id="frase"></p></div>
+          
+    <script>
+        function mitjana(sumatorioEdades, totalEdades) {
+            return sumatorioEdades / totalEdades;
+        }
+        function mostrar() {
+            let num_edades, suma_edades;
+
+            num_edades = parseInt(document.getElementById("num_edades").value);
+            suma_edades = 0;
+            i=1
+            
+            while (i <= num_edades) {
+                raw_edades = parseInt(prompt("Introdueix la edat numero " + (i) + ":", ""));
+                if ((raw_edades >= 0) && (raw_edades <= 120)) {
+                    suma_edades += raw_edades
+                    i++
+                } else {
+                    alert("Les edats han d'estar compreses entre 0 i 120!")
+                }
+            }
+            media_dec = mitjana(suma_edades, num_edades);
+            media = media_dec.toFixed(2);
+
+            document.getElementById("frase").innerHTML= "La mitjana de les edats introduïdes és " + media;
+            
+        }           
+    </script>
+    </body>
+</html>

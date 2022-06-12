@@ -1,0 +1,29 @@
+<html>
+    <head>
+        (M4) Exercici EXTRA 1
+    </head>
+    <body>
+        <p>Introdueix dos numeros. Després es mostrarà en pantalla si el dividend és múltiple del divisor, o no.</p>
+        <p>Introdueix un numero qualsevol: <br><input type="number" id="dividend" placeholder="Dividend"/></p>
+        <p>Introdueix un numero entre 2 i 7: <br><input type="number" id="divisor" placeholder="Divisor (2-7)"/></p>
+        <p><input type="button" onClick="mostrar()" Value="Ensenyar"/></p>
+        <p id="frase"></p>
+          
+    <script>
+        function mostrar() {
+
+            let dividend = parseInt(document.getElementById("dividend").value); 
+            let divisor = parseInt(document.getElementById("divisor").value);
+
+            if (divisor<=7 && divisor>=2) {
+                calcul =(dividend%divisor==0) ? "és" : "no és";
+            } else {
+                alert("¡¡¡ERROR!!!");
+            }
+            
+            document.getElementById("frase").innerHTML= "En aquest cas, el dividend " + calcul + " multiple del divisor";
+
+        }               
+    </script>
+    </body>
+</html>

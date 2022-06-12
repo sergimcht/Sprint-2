@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./CSS/diseno.css" />
+    </head>
+    <body>
+        <div id="enunciado">
+            <p></p>
+        </div><br>
+
+        <span id="tablaCirculos"><table>
+            <tr>
+                <th></th>
+                <th>Centro (x)</th>
+                <th>Centro (y)</th>
+                <th>Radio</th>
+            </tr>
+            <tr>
+              <td>Circulo 1</td>
+                <td><input type="number" min="-12" max="12" id="x1" ></td>
+                <td><input type="number" min="-12" max="12" id="y1" ></td>
+                <td><input type="number" min="-12" max="12" id="r1" ></td>
+            </tr>
+            <tr>
+                <td>Circulo 2</td>
+                <td><input type="number" min="-12" max="12" id="x2" ></td>
+                <td><input type="number" min="-12" max="12" id="y2" ></td>
+                <td><input type="number" min="-12" max="12" id="r2" ></td>
+            </tr>
+        </table></span><br>
+        <button id="b11" onclick="azulCirculo(); rojoCirculo(); mainFunction()">CALULAR</button><br>
+        <div id="datosCirculos" style= "display: none" >
+            La distancia entre los centros es de <span id="1"></span> puntos.<br>
+            Los circulos <span id="2"></span> iguales.<br>
+            Los círculos <span id="3"></span> concentricos.<br>
+            Los círculos <span id="4"></span> igual radio.<br>
+            Los círculos <span id="5"></span> tangentes.<br>
+            Los círculos <span id="6"></span> secantes.<br>
+            Los circulos <span id="7"></span> tocan. 
+        </div>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>//"use strict";</script>
+    <script src="./JS/classPunto.js"></script>
+    <script src="./JS/classCirculo.js"></script>
+    <script src="./JS/main.js"></script>
+    </body>
+</html>

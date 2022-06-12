@@ -1,0 +1,195 @@
+body {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 1em;
+    margin-bottom: 1em;
+
+    background-color: #000000;
+}
+
+
+nav {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: .5em;
+
+    background-color: #27394e;
+}
+
+nav > div {
+    padding: .5em 0;
+    margin: 1em 1em 1em 0;
+    
+    background-color: #ea584b;
+}
+
+nav > div:nth-child(1) {
+    flex: 1 1 0;
+    margin-left: 1em;
+}
+
+nav > div:nth-child(2) {
+    flex: 6 1 0;
+}
+
+nav > div:nth-child(3) {
+    flex: 1 1 0;
+
+}
+
+.search {
+    display: flex;
+    flex-flow: row nowrap;
+
+
+    background-color: #f0763a;
+}
+
+.search > div {
+    flex: 1;
+    padding: .5em 0;
+    margin: 1em;
+
+    background-color: #ffcc5e;
+}
+
+
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 1em;
+    margin-bottom: 1em;
+
+    background-color: #000000;
+}
+
+.article {
+    display: flex;
+    margin-right: 1em;
+    width: 70%;
+    flex-flow: column wrap;
+    background-color: #44465e;
+    gap: .5em .1em;
+    
+}
+
+.article-1 {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.article-1 > div {
+    padding: .5em;
+    margin: .5em;
+    flex: 1 1 0;
+    background-color: #1049c3;
+}
+
+.article-2 {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.article-2 > div {
+    padding: .5em;
+    margin: .5em;
+    flex: 1 1 0;
+    background-color: #1049c3;
+}
+
+.article-3 {
+    display: flex;
+    
+    flex-flow: row wrap;
+}
+
+.article-3 > div {
+    padding: .5em;
+    margin: .5em;
+    flex: 2 1 0;
+    
+    background-color: #5282e9;;
+}
+
+aside {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 30%;
+    gap: 0em;
+    background-color: #f94c47;
+}
+
+aside > div {
+    flex-flow: column wrap;
+    align-content: flex-start;
+    padding: .5em;
+    margin: .5em;
+    
+    background-color: #dfea4b;
+}
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    background-color: #000000;
+}
+
+.footer-div {
+    flex: 1;
+    padding: .5em;
+    margin: 1em;
+    
+    background-color: #ead24b;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        flex-flow: column nowrap;
+    
+        background-color: #ffee00;
+    }
+    
+    .article {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    nav {
+        flex-flow: column wrap;
+    }
+    nav > div {
+        margin: 1em;
+    }
+    nav > div:nth-child(2) {
+        flex: 1 1 0;
+    }
+    .article-1, .article-2, .article-3 {
+        flex-flow: column wrap;
+    }
+}
+
+/*column gap
+
+space evently en justify
+
+flex: 1;
+    width: 500px;
+    padding: .5em;
+    margin: 1em;
+    height: .2em;
+	padding: 10px;
+    align-items: center;*/

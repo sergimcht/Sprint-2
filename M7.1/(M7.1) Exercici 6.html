@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <h1>(M7.1) Exercici 6</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;}
+        
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Taula de multiplicar. L’usuari introduirà un número (del 1 al 10) per pantalla, 
+            i utilitzant un bucle, el programa li mostrarà la taula de multiplicar d’aquell número.<br>
+
+            Exemple:<br>
+            
+            2 x 1 = 2<br>
+            
+            2 x 2 = 4<br>
+            
+            2 x 3 = 6<br>
+            
+            ...<br>
+            
+            2 x 10 = 20<br></p></div>
+        <p></p>
+        <div id="inputs"><p>Introdueix un numero per veure la seva taula de multiplicar: <br></p>
+        <p><input type="number" id="numero" min="0" max="10" placeholder="Num."/>
+        <div class="boton"><input type="button" onClick="mostrar()" Value="Calcular"/></p></div></div>
+        <div id="resultat"><p id="frase"></p></div>
+          
+    <script>
+        function mostrar() {
+
+            let num, contenido;
+
+            num = parseInt(document.getElementById("numero").value);
+            contenido = "";  
+            
+            for (i=1; i<=10; i++) {
+                contenido += num + " x " + i + " = " + (num * i) + "<br>";
+            };
+            
+            console.log(num, contenido)
+            document.getElementById("frase").innerHTML="La taula de multiplicar del " + num + " és: <br>" + contenido;
+        }           
+    </script>
+    </body>
+</html>

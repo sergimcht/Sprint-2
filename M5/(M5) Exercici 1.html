@@ -1,0 +1,34 @@
+<html>
+    <head>
+        (M5) Exercici 1
+    </head>
+    <body>
+        <p>Indica el nombre de paraules que vols introduir per separat:<br>
+        <input type="number" id="palabras" placeholder="Nombre de paraules"/></p>
+        <p><input type="button" onClick="mostrar()" Value="Escriure"/></p>
+        <p id="frase"></p>
+          
+    <script>
+        function mostrar() {
+
+            let numeros, palabras, contenido, i;
+            numeros = parseInt(document.getElementById("palabras").value);
+            palabras = [];
+            contenido = "Has escrit: ";
+            
+            for (i=0; i<numeros; i++) {
+                palabras.push(prompt("Introdueix la paraula " + (i+1) + ":", "Escriu una paraula.")); 
+                contenido += palabras[i];
+                if (i<(numeros-1)) {
+                    contenido += ", ";
+                }
+            };
+
+            contenido += ".";
+
+            document.getElementById("frase").innerHTML=contenido;
+            console.log("numeros", numeros, "palabras", palabras, "contenido", contenido, "i", i);
+        }             
+    </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./CSS/diseno.css" />
+    </head>
+    <body>
+        <div id="enunciado">
+            <p>La ciutat de Barcelona, com qualsevol ciutat, està formada per un nombre molt gran d’edificis. Hi ha moltes classes d’edificis: edificis d’habitatges, hospitals, escoles, blocs d’apartaments, blocs d’oficines, hotels, cinemes, etc.<br><br>
+
+                L’exercici proposat consistirà en crear una aplicació que contindrà una classe Edifici i diverses classes derivades. No s’instanciarà cap objecte de la classe Edifici, sinó que s’instanciaran objectes de les classes derivades d’aquesta.  Les classes derivades són: Hotel, Hospital i Cinema.<br><br>
+                
+                Tots els edificis tindran certes dades comunes (nom, número de plantes, superficie (m²)) que es donaran en crear l’edifici i no es modificaran, però sí que s’haurà de poder accedir a elles per llegir-les.<br><br>
+            
+                L'aplicació ha de ser capaç de donar d'alta, mostrar i eliminar edificis. Al cridar el mètode mostrar, cridarem a tots els mètodes de l'edifici en qüestió per veure totes les seves dades per pantalla.</p>
+        </div><br>
+        <div id="botonesMenu">
+            <button id="b11" onclick="mostrarBuscador(1)">DAR DE ALTA EDIFICIO</button>
+            <button id="b12" onclick="mostrarBuscador(2)">MOSTRAR EDIFICIO</button>
+            <button id="b13" onclick="mostrarBuscador(3)">ELIMINAR EDIFICIO</button>
+        </div><br>
+        <div id="buscador" style="display: none">
+            Tipo de edificio:
+            <select name="tipoEdificio" id="tipoEdificio">
+                <option hidden>- - - -</option>
+                <option value="hotel">Hoteles</option>
+                <option value="hospital">Hospitales</option>
+                <option value="cine">Cines</option>
+            </select>
+            Nombre:
+            <input type="text" id="nombreEdificio" placeholder="- - - -" style="width: 300px">
+            <span id="botonesBuscador">
+            <button id="b21" onclick="insertarEdificio()" style="width: 150px">ALTA</button>
+            <button id="b22" onclick="mostrarEdificio()" style="width: 150px">VER</button>
+            <button id="b23" onclick="eliminarEdificio()" style="width: 150px">ELIMINAR</button>
+            </span>
+        </div><br>
+        <div id="frase"></div>
+
+    <script>//"use strict";</script>
+    <script src="./JS/classEdifici.js"></script>
+    <script src="./JS/classHotel.js"></script>
+    <script src="./JS/classHospital.js"></script>
+    <script src="./JS/classCinema.js"></script>
+    <script src="./JS/main.js"></script>
+    </body>
+</html>

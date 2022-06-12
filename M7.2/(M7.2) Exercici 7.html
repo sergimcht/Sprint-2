@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <h1>(M7.2) Exercici 7</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;
+
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>L’usuari introdueix un any a per teclat
+            i el programa crida a un mètode que indiqui l’any és de traspàs o no.<br></p></div>
+        <p></p>
+        <div id="inputs"><p>Introdueix un any de quatre xifres: <br></p>
+        <p><input type="number" id="year" placeholder="Número"/>
+        <div class="boton"><input type="button" onClick="validar()" Value="Calcular"/></p></div></div>
+        <div id="resultat"><p id="frase"></p></div>
+          
+    <script>
+        "use strict"
+        function calcular(year) {
+            if (((year % 400) == 0) || (((year % 4) == 0) && ((year % 100) != 0))) {
+                document.getElementById("frase").innerHTML= "L'any " + year + " sí és de traspàs."
+            } else {
+                document.getElementById("frase").innerHTML= "L'any " + year + " no és de traspàs."
+            }
+        }
+
+        function validar () {
+            let year = parseInt(document.getElementById("year").value);
+
+            if ((year >= 1000) && (year <10000)) {
+                calcular(year);
+            } else {
+                alert("Introdueix un any de 4 xifres.")
+            }
+        }          
+    </script>
+    </body>
+</html>

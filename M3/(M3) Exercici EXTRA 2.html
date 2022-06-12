@@ -1,0 +1,30 @@
+<html>
+    <head>
+        (M3) Exercici EXTRA 2
+    </head>
+    <body>
+        <p><input type="text" id="alt" placeholder="Alçada de la paret:"/></p>
+        <p><input type="text" id="ample" placeholder="Ample de la paret:"/></p>
+        <p><input type="text" id="mans" placeholder="Numero de mans a aplicar:"/></p>
+        <p><input type="button" onClick="mostrar()" Value="Obtenir litres."/></p>
+        
+        <p id="litres"></p>
+            
+    <script>
+                
+        function mostrar() {
+        let base = Number(document.getElementById("alt").value);
+        let altura = Number(document.getElementById("ample").value);
+        let manos = Number(document.getElementById("mans").value);
+        
+        let coberturaLitre = 12;
+        let area = Number(base * altura);
+        let litres = Number(area * manos / coberturaLitre);
+
+        document.getElementById("litres").innerHTML= "Per aquesta paret, necessitaràs un total de " + litres + " litres.";
+        }  
+                            
+        
+    </script>
+    </body>
+</html>

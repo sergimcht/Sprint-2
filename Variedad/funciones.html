@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tipos de Funcion</title>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+   <p id="parrafo1">Soy el párrafo 1</p>
+   <p id="parrafo2">Soy el párrafo 2</p>
+   <p id="parrafo3">Soy el párrafo 3</p>
+   <p id="parrafo4">Soy el párrafo 4</p>
+   <p id="parrafo5">Soy el párrafo 5</p>
+
+   <p>
+   <input id="btn1" type="button" onclick='MostrarInnerHTML("parrafo1")' value="Ver InnerHTML parrafo1"/>
+   <input id="btn2" type="button" onclick='MostrarInnerHTML("parrafo2")' value="Ver InnerHTM  parrafo2"/>
+   <input id="btn3" type="button" onclick='MostrarInnerHTML("parrafo3")' value="Ver InnerHTML parrafo3"/>
+   <input id="btn4" type="button" onclick='MostrarInnerHTML("parrafo4")' value="Ver InnerHTML parrafo4"/>
+   <input id="btn5" type="button" onclick='MostrarInnerHTML("parrafo5")' value="Ver InnerHTML parrafo5"/>
+   </p>
+
+   <p>¿Qué párrafo quieres cambiar? (1-5) <input id="numparrafo" type="number"/></p>
+   <p>¿Qué valor quieres escribir? <input id="valorparrafo" type="text"/></p>
+   <p><input id="btn20" type="button" onclick='llamaCambiarParrafo()' value="Cambiar párrafo"/></p>
+   <p id="mostraMes">Aquí irá el mes</p>
+   <p><input type='button' onClick='mesHoy()' Value='Mes actual' /></p>
+   <p><input type='button' onClick='llamaSumar()' Value='Sumar 2 numeros' /></p>
+
+   
+   
+   <script>
+      function MostrarInnerHTML(silla){
+         alert(document.getElementById(silla).innerHTML);
+      }
+
+      function cambiarParrafo(parrafo, valor){
+         document.getElementById(parrafo).innerHTML=valor;
+      }
+
+
+      
+      function llamaCambiarParrafo(){
+         let numeroParrafo = "parrafo" + document.getElementById("numparrafo").value;
+         let contenido = document.getElementById("valorparrafo").value;
+
+         cambiarParrafo(numeroParrafo, contenido);
+      }
+
+      function mesActual() {
+
+         let meses = ["Gener", "Febrer", "Març", "Abril", "Mai", "Juny", "Julliol",
+         "Agost", "Setembre", "Octobre", "Novembre", "Desembre"];
+         
+         let fecha = new Date(); // Imaginaros 08Feb2022
+         let mesFecha = fecha.getMonth(); // 1 (comienza a contar en 0)
+
+         let mesLetra = meses[mesFecha]; // Gener = 0, Febrer = 1.... 
+         //mes será igual a Febrer
+
+         return mesLetra;
+
+      } // fin funció mesActual...
+
+      function mesHoy() {
+         document.getElementById("mostraMes").innerHTML = "Estamos en " + mesActual();
+      }
+
+      function suma(numero1, numero2){
+         return numero1 + numero2;
+      }
+
+      function llamaSumar() {
+         let primerNumero = Number(prompt('Numero 1?',''));
+         let segundoNumero = Number(prompt('Numero 2?',''));
+
+         alert('El resultado de ' + primerNumero + '+' + segundoNumero + ' es ' + suma(primerNumero,segundoNumero));
+
+      }
+
+
+   </script>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6da49bdbc83bedc7',m:'TZXVRX9TQO_BFVEUraEZazoL5sDEuHTDo2nYJEJie14-1644320695-0-AYfPWPakfcvhV2wzjpQDzaUZZzYDV4jLXKqWjbfyIcz0HSw13zT/airopxPi4u6WOuXacgMyD6NJ4MJ0jI8DXI9ue4TBTOU3DJEnmu1Ivz3aUbi8yEwCPChZw4j6XwV4IZCtG5ntff84UA+RwpLjU8vk1gh6fOkWSUB8dwyg61x/eq+xE0mSMrGZzI3QV+SqqJPKKkXj1bO7LeJ5RR6gz4U=',s:[0xfaf8dd9244,0xe1c08c5460],}})();</script></body>
+</html>

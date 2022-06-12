@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./CSS/diseno.css" />
+    </head>
+    <body>
+        <div id="enunciado">
+            <p></p>
+        </div><br>
+        <div id="botonesMenu">
+            <button id="b11" onclick="mostrarBuscador(1)">ALTA</button>
+            <button id="b12" onclick="mostrarBuscador(2)">MOSTRAR</button>
+            <button id="b13" onclick="mostrarBuscador(3)">ELIMINAR</button>
+        </div><br>
+        <div id="buscador" style="display: none">
+            <select name="tipoElemento" id="tipoElemento">
+                <option hidden>Tipo</option>
+                <option value="escuderia">Escudería</option>
+                <option value="bolido">Bólido</option>
+                <option value="piloto">Piloto</option>
+                <option value="mecanico">Mecánico</option>
+            </select>
+            <input type="text" id="nombreElemento" placeholder="Nombre" style="width: 175px">
+            <span id="botonesBuscador">
+            <button id="b21" onclick="insertarElemento()" style="width: 150px">ALTA</button>
+            <button id="b22" onclick="mostrarEscuderia()" style="width: 150px">VER</button>
+            <button id="b23" onclick="eliminarElemento()" style="width: 150px">ELIMINAR</button>
+            </span>
+        </div><br>
+        <div id="frase"></div>
+
+    <script>"use strict";</script>
+    <script src="./JS/classEscuderia.js"></script>
+    <script src="./JS/classCoche.js"></script>
+    <script src="./JS/classTrabajador.js"></script>
+    <script src="./JS/classPiloto.js"></script>
+    <script src="./JS/classMecanico.js"></script>
+    <script src="./JS/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark - Sprint2</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./imagenes/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/main.min.css" /> // ESTILO PÁGINA
+    <link rel="stylesheet" href="./css/myStyles.min.css" /> //ESTILO BOTONES
+  </head>
+  <body>
+    <header class="my-5 py-5">
+      <!-- SECCIÓN NAVBAR -->
+
+      <nav class="navbar navbar-expand-lg fixed-top bg-white navbar-light py-4" id="nav-id">
+        <div class="container-md">
+          <a class="navbar-brand" href="#"><img src="./imagenes/logo-bookmark.svg" alt="" /> </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span><img src="./imagenes/icon-hamburger.svg" alt="" /></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link text-uppercase me-md-5 font-weight-600" aria-current="page" href="#features">Features</a>
+              <a class="nav-link text-uppercase me-md-5 font-weight-600" href="#download-area">Pricing</a>
+              <a class="nav-link text-uppercase me-md-5 font-weight-600" href="#faq">Contact</a>
+              <a class="btn btn-secondary text-uppercase px-5 font-weight-600 shadow" id="login-btn">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      
+
+      <!-- SECCIÓN MAIN CONTENT -->
+
+      <section class="container-md py-5" id="hero">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div>
+              <h1 class="text-center text-md-start text-dark my-4 fw-bold display-3">A Simple Bookmark Manager</h1>
+              <p class="text-center text-md-start text-muted pe-md-5 fs-5 opacity-75">A clean and simple interface to organize your favorite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
+
+              <div class="cta-buttons text-center text-md-start my-4">
+                <a href="#" class="btn btn-primary shadow-sm font-weight-600 py-2 px-3 me-md-2">Get it on Chrome</a>
+                <a href="#" class="btn btn-grey bg-light shadow font-weight-600 py-2 px-3">Get it on Firefox</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 order-first order-md-last">
+            <div class="position-relative" style="width: 150%;">
+              <img class="img-fluid" src="./imagenes/illustration-hero.svg" alt="" />
+              <div class="square square-lg bg-primary shape-right"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <!-- SECCIÓN FEATURES -->
+
+      <section class="container-md my-5" id="features">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h2 class="text-center">Features</h2>
+            <p class="text-muted fs-5 px-md-5 opacity-75 text-center">Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+          </div>
+        </div>
+        <!-- SECCIÓN TABS NAV -->
+
+        <nav>
+          <div class="nav nav-tabs my-5 justify-content-around flex-column flex-md-row" role="tablist">
+            <button class="nav-link active fs-5 font-weight-600 py-4" id="simple-tab" data-bs-toggle="tab" data-bs-target="#simple" type="button" role="tab" aria-selected="true">Simple Bookmarking</button>
+            <button class="nav-link fs-5 font-weight-600 py-4" id="speedy-tab" data-bs-toggle="tab" data-bs-target="#speedy" type="button" role="tab" aria-selected="false">Speedy Searching</button>
+            <button class="nav-link fs-5 font-weight-600 py-4" id="easy-tab" data-bs-toggle="tab" data-bs-target="#easy" type="button" role="tab" aria-selected="false">Easy Sharing</button>
+          </div>
+        </navss=>
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="simple" role="tabpanel" aria-labelledby="simple-tab">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="position-relative my-5">
+                  <img class="img-fluid" src="./imagenes/illustration-features-tab-1.svg" alt="" />
+                  <div class="square square-lg bg-primary shape-left" style="width: 150%; transform:translateX(-360px)" ></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="text-center text-md-start text-dark my-4 fw-bold display-4">Bookmark in one click</h1>
+                <p class="text-center text-md-start text-muted pe-md-5 fs-4 opacity-75">Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
+                <div class="text-center text-md-start my-4 d-none d-md-inline-block">
+                  <a href="#" class="btn btn-primary shadow-sm font-weight-600 py-3 px-3 me-2">More Info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="speedy" role="tabpanel" aria-labelledby="speedy-tab">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="position-relative my-5">
+                  <img class="img-fluid" src="./imagenes/illustration-features-tab-2.svg" alt="" />
+                  <div class="square square-lg bg-primary shape-left" style="width: 150%; transform:translateX(-550px)"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="text-center text-md-start text-dark my-4 fw-bold display-4">Intelligent search</h1>
+                <p class="text-center text-md-start text-muted pe-md-5 fs-4 opacity-75">Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your boomarks.</p>
+                <div class="text-center text-md-start my-4 d-none d-md-inline-block">
+                  <a href="#" class="btn btn-primary shadow-sm font-weight-600 py-3 px-3 me-2">More Info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="easy" role="tabpanel" aria-labelledby="easy-tab">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="position-relative my-5">
+                  <img class="img-fluid" src="./imagenes/illustration-features-tab-3.svg" alt="" />
+                  <div class="square square-lg bg-primary shape-left" style="width: 150%; transform:translateX(-550px)"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="text-center text-md-start text-dark my-4 fw-bold display-4">Share your bookmarks</h1>
+                <p class="text-center text-md-start text-muted pe-md-5 fs-4 opacity-75">Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
+                <div class="text-center text-md-start my-4 d-none d-md-inline-block">
+                  <a href="#" class="btn btn-primary shadow-sm font-weight-600 py-3 px-3 me-2">More Info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DOWNLOAD -->
+      <section class="container-md my-5 py-5" id="download-area">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8">
+            <h2 class="text-center">Download the extension</h2>
+            <p class="text-muted fs-5 px-md-5 opacity-75 text-center">We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
+          </div>
+        </div>
+
+        <div class="row text-center justify-content-center px-lg-3" id="extensions">
+          <div class="col-auto col-sm-6 col-md-4 col-lg-3 card-container position-relative">
+            <div class="custom-card shadow pt-5 pb-4 my-3">
+              <img src="./imagenes/logo-chrome.svg" alt="Chrome logo" class="browser-thumbnail" />
+              <div class="my-4">
+                <h5>Add to Chrome</h5>
+                <p class="text-muted">Minimum version 62</p>
+              </div>
+              <div>
+                <img src="./imagenes/bg-dots.svg" alt="" class="bg-dots" />
+              </div>
+              <a href="#" class="btn btn-primary shadow mt-4 py-2 px-sm-2 px-xl-4 font-weight-600">Add & Install Extension</a>
+            </div>
+          </div>
+          <div class="col-auto col-sm-6 col-md-4 col-lg-3 card-container position-relative">
+            <div class="custom-card shadow pt-5 pb-4 my-3">
+              <img src="./imagenes/logo-firefox.svg" alt="Firefox logo" class="browser-thumbnail" />
+              <div class="my-4">
+                <h5>Add to Firefox</h5>
+                <p class="text-muted">Minimum version 55</p>
+              </div>
+              <div>
+                <img src="./imagenes/bg-dots.svg" alt="" class="bg-dots" />
+              </div>
+              <a href="#" class="btn btn-primary shadow mt-4 py-2 px-sm-2 px-xl-4 font-weight-600">Add & Install Extension</a>
+            </div>
+          </div>
+          <div class="col-auto col-sm-6 col-md-4 col-lg-3 card-container position-relative">
+            <div class="custom-card shadow pt-5 pb-4 my-3">
+              <img src="./imagenes/logo-opera.svg" alt="Opera logo" class="browser-thumbnail" />
+              <div class="my-4">
+                <h5>Add to Opera</h5>
+                <p class="text-muted">Minimum version 46</p>
+              </div>
+              <div>
+                <img src="./imagenes/bg-dots.svg" alt="" class="bg-dots" />
+              </div>
+              <a href="#" class="btn btn-primary shadow mt-4 py-2 px-sm-2 px-xl-4 font-weight-600">Add & Install Extension</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN FAQ -->
+      <section class="container-md my-5" id="faq">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <p class="text-muted fs-5 opacity-75 text-center">Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed font-weight-600" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is a Bookmark?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis officia omnis nemo blanditiis facilis vitae earum eos facere numquam quam sint nesciunt provident voluptatem aperiam dignissimos illo voluptate, laborum vel. Ipsum beatae magnam vitae non, rerum quos? Aut, eius esse dolorum ea ad tempore deserunt cumque dolores expedita impedit. Voluptate?</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed font-weight-600" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">How can I request a new browser?</button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus ipsum voluptatibus, accusantium, rem dolorum qui et odio facilis repellendus in sapiente vero natus. Ullam, accusamus numquam maiores fugiat reiciendis iusto harum magni magnam vitae ut suscipit atque quo exercitationem nobis placeat repudiandae quasi, corporis neque et. Neque nisi excepturi odit?</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed font-weight-600" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Is there a mobile app?</button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque doloribus, numquam, eos hic delectus adipisci asperiores harum consequatur culpa, ea minima deleniti vitae corporis amet aperiam quo accusamus voluptas autem distinctio alias. Commodi nemo ipsum nostrum rerum sit labore! Omnis dignissimos fuga adipisci animi dolorem cum reprehenderit veritatis numquam molestias.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed font-weight-600" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">What about other Chromium browsers?</button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum esse cumque. Assumenda minus quo porro autem quibusdam repellat, commodi provident possimus cumque ipsum nihil expedita! Eaque, harum, nisi nesciunt atque pariatur est dolorem cumque officia consequuntur officiis dicta labore culpa, sunt laudantium. Corporis similique, culpa saepe laudantium ab neque?</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-5 text-center">
+          <a href="#" class="btn btn-primary shadow-sm font-weight-600 py-3 px-3 mx-auto">More Info</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <!-- *** FOOTER CTA *** -->
+      <section class="mt-5 bg-primary py-5 container-fluid" id="footer">
+        <div class="row justify-content-center">
+          <div class="col col-md-6">
+            <p class="text-center text-white text-uppercase fs-5">35,000+ already joined</p>
+            <h2 class="text-center text-white px-5 my-4">Stay up-to-date with what we're doing</h2>
+          </div>
+        </div>
+        <form action="#" class="row g-3 row-cols-auto justify-content-center needs-validation" novalidate>
+          <div class="col position-relative">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required />
+            <div class="invalid-tooltip">Whoops, make sure it's an email</div>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-secondary">Contact Us</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- *** STICKY FOOTER *** -->
+      <section id="footer-nav" class="py-2">
+        <div class="container-md d-flex flex-column flex-md-row align-items-center">
+          <a class="navbar-brand text-center mb-1" href="#"><img src="./imagenes/logo-bookmark-white.svg" alt="" /> </a>
+          <div class="d-flex flex-column flex-md-row align-items-center">
+            <a class="nav-link text-uppercase" aria-current="page" href="#">Features</a>
+            <a class="nav-link text-uppercase" href="#">Pricing</a>
+            <a class="nav-link text-uppercase" href="#">Contact</a>
+          </div>
+          <div class="socials d-flex ms-md-auto align-items-center">
+            <a class="nav-link text-uppercase" aria-current="page" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" /></svg>
+            </a>
+            <a class="nav-link text-uppercase" aria-current="page" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20">
+                <path
+                  fill=""
+                  fill-rule="evenodd"
+                  d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

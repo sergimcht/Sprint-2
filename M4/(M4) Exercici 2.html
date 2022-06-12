@@ -1,0 +1,29 @@
+<html>
+    <head>
+        (M4) Exercici 2
+    </head>
+    <body>
+        <p><input type="number" min="1" max="110" id="edat" placeholder="Edat"/></p>
+        <p><input type="button" onClick="mostrar()" Value="Ensenyar"/></p>
+        <p id="frase"></p>
+          
+    <script>
+        function mostrar() {
+
+            let edat = Number(document.getElementById("edat").value);        
+                     
+            if (edat<=5) {
+                document.getElementById("frase").innerHTML= "PREESCOLAR";    
+            } else if (edat>=5 && edat<=11) {
+                document.getElementById("frase").innerHTML= "PRIMÀRIA";   
+            } else if (edat>=12 && edat<=15) {
+                document.getElementById("frase").innerHTML= "ESO"; 
+            } else if (edat>=16 && edat<=17) {
+                document.getElementById("frase").innerHTML= "BATXILLERAT"; 
+            } else {
+                document.getElementById("frase").innerHTML= "FP O UNIVERSITAT"; 
+            }
+        }               
+    </script>
+    </body>
+</html>

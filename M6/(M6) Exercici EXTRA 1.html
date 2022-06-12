@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <h1>(M6) Exercici EXTRA 1</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 95%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:14px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 40%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2b00;
+            border: 5px solid #1c171d; border-width: 4px; background-color: #22802800; text-align: left; line-height: 28px; font-weight: bold;
+        }
+
+        #resultat {letter-spacing: 4px; padding: 10px 15px; width: 69%; text-align: justify;
+        }
+
+        .boton {position: static;
+
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Fes un programa amb 3 funcions. El programa ha de cridar a les 3 funcions e interactuar amb ells de la següent manera:<br>
+
+            a. Crea una funció sense paràmetres i sense retorn que imprimeixi per consola “sóc una funció”.<br>
+            
+            Sortida: sóc una funció<br>
+            
+            b. Crea una funció que rebi un array de números com a paràmetre, imprimeixi el número més gran per consola i retorni l’índex de l’array on es troba 
+            el número més petit. Crea un array de 5 números i crida a la funció que acabes de crear per imprimir el número més petit de l’array.<br>
+            
+            Sortida (amb aquests números dintre de l’array “8, 12, 5, 22, 6”:<br>
+            
+                            Número més gran 22 (això ho imprimeix el propi mètode)<br>
+                            Número més petit 5  (això ho imprimeix on s'ha fet la crida al mètode)<br> 
+            
+            c. Crea una funció que rebi dos números com a paràmetres i retorni un array amb tots els números compresos entre ells.<br>
+            Crida a la funció que acabes de crear amb els dos números que vulguis i imprimeix l’array que et retorna.<br>
+            
+                           Sortida (amb el núm 2 i 10):<br>
+            
+                           Els números compresos entre 2 i 10 són: 3, 4, 5, 6, 7, 8, 9<br>
+            
+            <br></p></div>
+        <p>1. Introdueix 5 numeros per conformar un array (caselles buides valdran 0):<br>
+        <input type="number" id="num1Array1" placeholder="Numero 1"/>
+        <input type="number" id="num1Array2" placeholder="Numero 2"/>
+        <input type="number" id="num1Array3" placeholder="Numero 3"/>
+        <input type="number" id="num1Array4" placeholder="Numero 4"/>
+        <input type="number" id="num1Array5" placeholder="Numero 5"/><br></p>
+        <p>2. Introdueix dos numeros per conformar un array amb el numeros d'enmig (caselles buides valdran 0):<br>
+        <input type="number" id="num2Array1" placeholder="Numero 1"/>
+        <input type="number" id="num2Array2" placeholder="Numero 2"/><br></p>
+        <div class="boton"><input type="button" onClick="activar()" Value="Procedir"/></p></div></div>
+        <div id="funcioa"><p id="frasea"></p></div>
+        <div id="funciob1"><p id="fraseb1"></p></div>
+        <div id="funciob2"><p id="fraseb2"></p></div>
+        <div id="funcioc"><p id="frasec"></p></div>
+          
+    <script>
+        let numeros1, numeros2;
+        
+        function enunciadoa() {
+            
+            document.getElementById("frasea").innerHTML= "Sóc una funció.";
+        }
+
+        function enunciadob(unArray) {
+            
+            let valorMax = Math.max(...unArray);
+            let valorMin = Math.min(...unArray);
+
+            document.getElementById("fraseb1").innerHTML= "El número máxim de l'array és " + valorMax + ".";
+            return valorMin;
+        }
+
+        function enunciadoc(numero1, numero2) {
+            let numArray = [];
+            let i;
+                        
+            for (i=numero1 + 1; i<numero2; i++) {
+                numArray.push(" " + i);
+            }
+            return numArray
+        }
+
+        function activar() {
+            
+            //empieza el primero
+            enunciadoa();
+
+            //empieza el segundo
+            numeros1 = [];
+            numeros1.push(Number(document.getElementById("num1Array1").value));
+            numeros1.push(Number(document.getElementById("num1Array2").value));
+            numeros1.push(Number(document.getElementById("num1Array3").value));
+            numeros1.push(Number(document.getElementById("num1Array4").value));
+            numeros1.push(Number(document.getElementById("num1Array5").value));
+                    
+            
+            let valorMin = enunciadob(numeros1);
+            let indexMin = numeros1.indexOf(valorMin);
+            document.getElementById("fraseb2").innerHTML= "El número més petit és " + valorMin + " i es troba a la posició " + indexMin + " de l'array.";
+
+            //empieza el tercero
+            
+            num1 = Number(document.getElementById("num2Array1").value);
+            num2 = Number(document.getElementById("num2Array2").value);
+
+            if (num1 > num2) {
+                document.getElementById("frasec").innerHTML= "Els números compresos entre " + num2 + " i " + 
+                num1 + " són: " + enunciadoc(num2, num1) + ".";
+            } else {
+                document.getElementById("frasec").innerHTML= "Els números compresos entre " + num1 + " i " + 
+                num2 + " són: " + enunciadoc(num1, num2) + ".";
+            }
+        }          
+    </script>
+    </body>
+</html>

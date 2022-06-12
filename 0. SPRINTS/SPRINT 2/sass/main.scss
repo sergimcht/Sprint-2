@@ -1,0 +1,62 @@
+@import "../sass/custom";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Utility classes for FW and Position
+.font-weight-600 {
+  font-weight: 600;
+}
+
+// Style for the "shapes" drawn underneath the images
+.shape-right {
+  position: absolute;
+  background-color: $primary;
+  width: 80%;
+  height: 80%;
+  right: -20px;
+  bottom: -25px;
+  border-radius: 150px 0 0 150px;
+  z-index: -1;
+}
+
+.shape-left {
+  position: absolute;
+  background-color: $primary;
+  width: 80%;
+  height: 100%;
+  left: -100px;
+  bottom: -50px;
+  border-radius: 0px 150px 150px 0px;
+  z-index: -1;
+}
+
+// Custom card style for the download section
+
+.custom-card {
+  border-radius: 20px;
+
+  .browser-thumbnail {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
+
+  .bg-dots {
+    width: 100%;
+  }
+}
+
+// Footer section bg color
+#footer-nav {
+  background-color: #242946;
+}
+
+// Mobile media queries for the cards positioning
+
+@media (min-width: 768px) {
+  .card-container:nth-child(1) {
+    top: -20px;
+  }
+  .card-container:nth-child(3) {
+    bottom: -20px;
+  }
+}

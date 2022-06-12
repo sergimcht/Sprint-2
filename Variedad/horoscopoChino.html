@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Horóscopo Chino</title>
+      <meta charset='utf-8'>
+      <style>
+         * {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+         body {margin: 2em;}
+         #enunciado {background-color: #EBF5FB; padding: 1em; font-size: 85%;}
+         table {background-color: #fff; border-collapse: collapse; border: 1px #000 solid;}
+         input[type=number] {width: 5em; text-align: center; font-size: 105%; font-weight: bold; background-color: #fff;}
+      </style>
+    <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+    <body>
+      <!--Esto es HTML-->
+      <h1><input type="button" id="b1" value="-" onClick='desplegar("b1", "enunciado")'/> Cálculo del Horóscopo Chino </h1>
+      <div id="enunciado">
+            <p>Este programa muestra el signo aproximado del horóscopo chino dado un año  y mes de nacimiento.</p>
+            <p>Para conocer el signo del horóscopo chino, debemos extraer el residuo de la división del año de nacimiento entre 12. <br>El residuo, <em>entre 0 y 11</em>, está asociado a un signo según la siguiente tabla:</p>
+            <table width="80%">
+            <tr>
+               <th>Resto</th>
+               <td>0</td>   
+               <td>1</td>   
+               <td>2</td>   
+               <td>3</td>   
+               <td>4</td>   
+               <td>5</td>   
+               <td>6</td>   
+               <td>7</td>   
+               <td>8</td>   
+               <td>9</td>   
+               <td>10</td>   
+               <td>11</td>
+            </tr><tr>
+               <th>Signo</th>
+               <td>Mono</td>   
+               <td>Gallo</td>   
+               <td>Perro</td>   
+               <td>Cerdo</td>   
+               <td>Rata</td>   
+               <td>Buey</td>   
+               <td>Tigre</td>   
+               <td>Conejo</td>   
+               <td>Dragón</td>   
+               <td>Serpiente</td>   
+               <td>Caballo</td>   
+               <td>Cabra</td>
+            </tr></table>
+            <p>Como el año chino generalmente comienza en febrero, si has nacido en enero (<em>o los primeros días de febrero</em>) te podría tocar el signo anterior <em>Va según la luna nueva</em>.</p>   
+      </div>
+      <div class="ejercicio">
+            <h3>Para calcular tu signo, indica tu año y mes de nacimiento y presiona el botón <b>CALCULAR</b>
+            </h3>
+            <p>Mes de nacimiento (1-12): 
+               <input style="width: 4em;" type="number" min="1" max="12" id="mes" value="7"/></p>
+            <p>Año de nacimiento (4 dígitos): 
+               <input style="width: 4em;" type="number" id="anho" value="1964"/></p>
+            <p><input type='button' Value=' CALCULAR ' onClick='validar()'/></p>
+            <h2 id="signo"></h2>
+            <p><img id="imgSigno" src="https://pics.freeicons.io/uploads/icons/png/6786294401582793676-64.png" title="tu signo chino" alt="tu signo chino"/></p>
+      </div>
+      <!--Acá pasaremos a JavaScript (con la instrucción SCRIPT)--> 
+      <script>
+         "use strict"; //Obligamos a definir las variables
+
+         function main() {
+            let mensaje, imagen;
+            let signos = ["Mono", "Gallo", "Perro", "Cerdo", "Rata", "Buey", "Tigre", "Conejo",	"Dragón",
+               "Serpiente", "Caballo",	"Cabra"];
+            let anho =  parseInt(document.getElementById("anho").value);
+            let posicion = anho % 12;
+            let posicionAntes = (posicion == 0 ? 11 : posicion -1)
+            let mes = parseInt(document.getElementById("mes").value);
+            
+            imagen = "./img/i" + posicion + ".jpg"
+
+            if (mes >2) {
+               mensaje = "Tu signo es <em>" + signos[posicion] + "</em>";
+            } else if (mes == 2) { 
+               mensaje = "Tu signo es <em>" + signos[posicion] + "</em>";
+               mensaje += "<br>aunque si has nacido antes del dia 5 podrias ser <em>" + signos[posicionAntes] + "</em>";
+            } else {
+               mensaje = "Tu signo es <em>" + signos[posicionAntes] + "</em>";
+               imagen = "./img/i" + posicionAntes + ".jpg"
+            }
+
+            document.getElementById("signo").innerHTML = mensaje;
+            document.getElementById("imgSigno").src = imagen;
+         }
+
+         function validar() {
+            let valor; //lo usamos para que las validaciones en el if queden más cortas
+            let validado = true;
+            let msgError = "Los campos en rojo tienen información incorrecta!\n"
+            msgError += "Corrija los valores y presione de nuevo el botón 'Ejecutar'"
+         
+            valor = document.getElementById("mes").value; 
+            if (isNaN(valor) || valor <1 || valor >12) {
+                  validado = false;
+                  document.getElementById("mes").style.backgroundColor = "#E6B0AA";   
+            } else {
+                  document.getElementById("mes").style.backgroundColor = "white";
+            }
+
+            valor = document.getElementById("anho").value; 
+            if (isNaN(valor) || valor=="" || valor <999) {
+                  validado = false;
+                  document.getElementById("anho").style.backgroundColor = "#E6B0AA";   
+            } else {
+                  document.getElementById("anho").style.backgroundColor = "white";
+            }
+
+            // abortar si todo no está validado
+            if (!validado) {
+                  alert(msgError);
+            } else {
+                  main();
+            }
+                  
+         }
+
+         function desplegar(desde, parte){
+            let quien = document.getElementById(desde).value;
+
+            if (quien=='-') {
+                  document.getElementById(parte).style.display = 'none';
+                  document.getElementById(desde).value = '+';
+            } else {
+                  document.getElementById(parte).style.display = 'block';
+                  document.getElementById(desde).value = '-';
+            }
+         }
+      </script>
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6db40d07ee34ee89',m:'mp3A.btWm475oqhnhqNrKbsRf33Mox_MPf2ZnhPnYbY-1644482617-0-AVvw/Xj9dbgPP4VXNhq48SozyN7041Cxu16LInYbt55GtFWPIBywAjA4y0hPnVRh4JcOGYl26dR0qi4VC1NcKE2d5K0kzeaYveZDWRumjra40jAOxA/RmlPJ0hbqkAw6GPPIQ1X/S5e4sN1c+6XITs6Q2m5LW8aznbHC/LA6mdv3mAyCTz+RKRJpYTEKt1dHuLCiIIEu8vZB0GGNeRfIVEE=',s:[0x072d80e02a,0x6039d35826],}})();</script></body>
+</html>

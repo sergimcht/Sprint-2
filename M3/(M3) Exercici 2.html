@@ -1,0 +1,27 @@
+<html>
+    <head>
+        (M3) Exercici 2
+    </head>
+    <body>
+        <p id="suma"></p>
+        <p id="resta"></p>
+        <p id="multi"></p>
+        <p id="divi"></p>
+    
+    <script>
+        let integer1 = Number(alert("Introdueix un numero sencer qualsevol:", "Escriu el teu número."));
+        let integer2 = Number(alert("Introdueix un altre numero sencer qualsevol:", "Escriu el teu número."));
+
+        //info por consola
+        console.log ("integer1: " + integer1);
+        console.log ("integer2: " + integer2);
+        
+        //info en pantalla
+        document.getElementById("suma").innerHTML= "El resultat de la suma és: " + Number(integer1 + integer2);
+        document.getElementById("resta").innerHTML= "El resultat de la resta és: " + Number(integer1 - integer2);
+        document.getElementById("multi").innerHTML= "El resultat de la multiplicació és: " + Number(integer1 * integer2);
+        document.getElementById("divi").innerHTML= "El resultat de la divisió és: " + Number(integer1 / integer2);
+
+    </script>
+    </body>
+</html>

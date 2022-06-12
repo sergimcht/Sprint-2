@@ -1,0 +1,79 @@
+<html>
+    <head>
+    <style>
+        body{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, monospace; background-color: #ffc9ea; color: #37667e; display: flex;
+        flex-direction: column; align-items: center; width: 100vw; text-align: center}
+
+        #enunciat{width: 85%; background: #ff71c8; padding: 15px; line-height: 25px; border-radius: 20px; font-size:22px; font-weight: 500; color: rgb(0, 0, 0)}
+
+        #subenunciat{font-size:26px; font-weight: 700; color: rgb(0, 0, 0)}
+
+        input{width: 8em; border-radius: 10px; border: 2px solid #6e1c4f; background: #ff71c8; color: #000000; padding: 5px 10px; font-weight: 700; font-size:22px}
+
+        #inputingr {transform: translate(13px);}
+        
+        button{padding: 10px 20px; border-radius: 30px; background: #ff71c8; border: 2px solid #6e1c4f; color: rgb(0, 0, 0); outline: none; cursor: pointer; 
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 500; font-size:20px; transition: all 700ms ease}
+
+        button:hover{border: 2px solid #ff71c8; color: #000000; background: #ffd1ed; transform: translateY(5px)}
+
+        table {background-color: #ffffffa1; border-radius: 30px; font-weight: 500; margin: auto}
+        
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Un grup d’amics ha quedat per fer una fideuà, els ingredients principals seran: fideus, gambes, i calamars.
+            Saben que per cada quatre persones han d’utilitzar mig quilo de fideus, 200 grams de gambes i 400 grams de calamars.<br>
+            S’ha de fer un programa que demani per pantalla el preu per quilo de cada ingredient i el nombre d’amics que seran per dinar. 
+            El programa ha de calcular les quantitats necessàries de cada ingredient, el preu per persona i el preu final de la fideuà.</div>
+        <div id="subenunciat"><p>Introdueix número de persones i preu del quilo de cada ingredient: <br></p>
+        <input type="number" id="personas" placeholder="Nº persones" min="0" step="0.5"/><br><br>
+        <div id="inputingr"><input type="number" id="pfideos" placeholder="Preu fideus" min="0" step="0.1"/> €
+        <input type="number" id="pgambas" placeholder="Preu gambes" min="0" step="0.1"/> €
+        <input type="number" id="pcalamares" placeholder="Preu calamars" min="0" step="0.1"/> €<br><br></div>
+        <button onclick="validar()">Comprovar</button>
+        <div class="resultat"><p id="cantidading"></p></div>
+        <div class="resultat"><p id="precios"></p></div>
+        
+          
+    <script>
+        //"use strict"
+
+        let kgfideospp = (0.5 / 4);
+        let kggambaspp = (0.2 / 4);
+        let kgcalamarpp = (0.4 / 4);
+
+        function calcular(personas, pfideos, pgambas, pcalamar) { // compara y escribe en html
+            let cfideos = (personas * kgfideospp).toFixed(3);
+            let cgambas = (personas * kggambaspp).toFixed(3);
+            let ccalamar = (personas * kgcalamarpp).toFixed(3);
+            // ↑cantidades ingredientes // ↓precio total ingredientes
+            let pfideostotal = pfideos * cfideos;
+            let pgambastotal = pgambas * cgambas;
+            let pcalamartotal = pcalamar * ccalamar;
+
+            let ptotal = (pfideostotal + pgambastotal + pcalamartotal).toFixed(2);
+            let ppp = (ptotal / personas).toFixed(2);
+
+            document.getElementById("cantidading").innerHTML= "La quantitat total de fideus serà de " + (cfideos * 1000) + " g. La de gambes serà de " + (cgambas * 1000) + 
+            " g. La de calamars serà de "+ (ccalamar * 1000) + " g." 
+            document.getElementById("precios").innerHTML= "Per a " + personas + " persones, el cost total de la fideuà serà de " + ptotal + "€, un total de " + ppp + "€ per persona."
+        }
+
+        function validar() { //recibe input y los valida
+            let personas = document.getElementById("personas").value; // no limito decimales por si alguien come poco
+            let preciofideos = document.getElementById("pfideos").value;
+            let preciogambas = document.getElementById("pgambas").value;
+            let preciocalamares = document.getElementById("pcalamares").value;
+            
+            if ((personas == 0) || (preciofideos == 0) || (preciogambas == 0) || (preciocalamares == 0)) {
+                alert("Un dels camps està buit!")
+            } else if ((personas < 0) || (preciofideos < 0) || (preciogambas < 0) || (preciocalamares < 0)) {
+                alert("Un dels camps és un número negatiu")
+            } else {
+                calcular(personas, preciofideos, preciogambas, preciocalamares);
+            }
+        }          
+    </script>
+    </body>
+</html>

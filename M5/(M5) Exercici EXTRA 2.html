@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <h1>(M5) Exercici EXTRA 2</h1>
+    <style>
+        body{background-color:#8dd2f152}
+        #enunciat {width: 55%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2bb6;
+            border: 5px dashed #506e57; border-width: 2px; background-color: hsla(313, 77%, 66%, 0.431); text-align: justify; line-height: 28px; font-weight: bold;
+        }
+
+        #inputs {width: 55%; padding: 10px 15px; color:rgb(34, 34, 49); font-family: Arial, Helvetica, sans-serif; font-size:17px; text-shadow:7px -2px 18px #302b2bb6;
+            border: 5px none #d919ff; border-width: 2px; background-color: #22802800; text-align: center; line-height: 28px; font-weight: bold;
+        }
+
+        #ele {letter-spacing: 4px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Realitza un programa que pinti la lletra L per pantalla feta amb asteriscs.
+
+            El programa demanarà l'altura.
+            
+            El pal horitzontal de la L tindrà una longitud de la meitat (divisió entera entre 2) de l'altura més un.<br></p></div>
+        
+        <div id="inputs"><p>Escriu l'alçada que vols que tingui la teva "L": <br></p>
+        <p><input type="number" id="num" placeholder="Alçada"/>
+        <input type="button" onClick="mostrar()" Value="Dibuixar"/></p></div>
+        <div id="ele"><p id="frase"></p></div>
+          
+    <script>
+        function mostrar() {
+
+            let a, b, i, k, contenido;
+            a = Number(document.getElementById("num").value);
+            b = (a / 2) + 1;
+            contenido = "<br />";
+
+            for (i=0; i<(a - 1); i++) {
+                contenido += "*" + "<br />";
+            };
+            for (k=0; k<b; k++) {
+                contenido += "    *";
+            };
+
+            document.getElementById("frase").innerHTML=contenido;
+        }           
+    </script>
+    </body>
+</html>

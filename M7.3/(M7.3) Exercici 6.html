@@ -1,0 +1,94 @@
+<html>
+    <head>
+    <style>
+        body{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, monospace; background-color: #ffc9ea; color: #37667e; display: flex;
+        flex-direction: column; align-items: center; width: 100vw; text-align: center}
+
+        #enunciat{width: 85%; background: #ff71c8; padding: 15px; line-height: 25px; border-radius: 20px; font-size:22px; font-weight: 500; color: rgb(0, 0, 0)}
+
+        #subenunciat{font-size:26px; font-weight: 700; color: rgb(0, 0, 0)}
+
+        input{width: 35em; border-radius: 10px; border: 2px solid #6e1c4f; background: #ff71c8; color: #000000; padding: 5px 10px; font-weight: 700; font-size:22px}
+
+        button{padding: 10px 20px; border-radius: 30px; background: #ff71c8; border: 2px solid #6e1c4f; color: rgb(0, 0, 0); outline: none; cursor: pointer; 
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: 500; font-size:20px; transition: all 700ms ease}
+
+        button:hover{border: 2px solid #ff71c8; color: #000000; background: #ffd1ed; transform: translateY(5px)}
+
+        table {background-color: #ffffffa1; border-radius: 30px; font-weight: 500; margin: auto}
+        
+    </style>
+    </head>
+    <body>
+        <div id="enunciat"><p>Donat un array de números, el programa ha de mostrar la suma de tots els números parells i la suma de tots els números imparells.</div>
+        <div id="subenunciat"><p>Introdueix un seguit de números separats per una coma ( , ): <br></p>
+        <input type="text" id="numeros" placeholder="Frase"/>
+        <button onclick="validar()">Comprovar</button>
+        <div class="resultat"><p id="pares"></p></div> 
+        <div class="resultat"><p id="impares"></p></div>
+        
+          
+    <script>
+        "use strict"
+        function calculosPar(pares) { //calculos pares
+            let i = 0;
+            let sumaPares = 0;
+            while (i < pares.length) {
+                sumaPares += pares[i];
+                i++;
+            }
+            return sumaPares;
+        }
+
+        function calculosImpar(impares) { //calculos impares 
+            let i = 0;
+            let sumaImpares = 0;
+            while (i < impares.length) {
+                sumaImpares += impares[i];
+                i++;
+            }
+            return sumaImpares;
+        }
+
+        function separar(array) { // crea array par e impar. Escribe en html
+            let arrayPar = [];
+            let arrayImpar = [];
+            let i = 0;
+            
+            while (i < array.length) {
+                if ((array[i] % 2) == 0) { //par
+                    arrayPar.push(array[i]);
+                    i++;
+                } else if ((array[i] % 2) != 0) { //impar
+                    arrayImpar.push(array[i]);
+                    i++;
+                }
+            }
+            document.getElementById("pares").innerHTML= "Els números parells són: " + arrayPar + ". El resultat de la suma és de " + calculosPar(arrayPar) + ".";
+            document.getElementById("impares").innerHTML= "Els números imparells són: " + arrayImpar + ". El resultat de la suma és de " + calculosImpar(arrayImpar) + ".";
+        }
+        
+        function tieneletras(string) { // usar la del truetruefalse
+            string = string.replace(/,/g, "");
+            let buscar = string.match(/\D/g);
+            
+            if (buscar != null) {
+                return "1";
+            }
+        }
+
+        function validar() { //recibe input y los separa
+            let nums = document.getElementById("numeros").value;
+            nums = nums.replace(/ /g, "");
+
+            if (tieneletras(nums) == "1") { //valida que solo tenga numeros y comas
+                alert("Només pots introduïr números separats per comes!!"); //alerta y no calcula más
+            } else {
+                let arrayNums = nums.split(",");
+                arrayNums = arrayNums.map(Number);
+                separar(arrayNums);
+            }
+        }          
+    </script>
+    </body>
+</html>

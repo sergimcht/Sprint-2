@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./CSS/diseno.css" />
+    </head>
+    <body>
+        <div id="enunciat"><p>Crea una classe en JavaScript anomenada "Ordinador", en un fitxer anomenat ordinador.js<br>
+
+            Aquesta classe tindrà com a atributs la marca, el model, el processador, la quantitat de memòria RAM i la capacitat del disc dur.<br>
+            
+            A més del constructor, ha de disposar de mètodes.<br>
+            
+            En un altre fitxer anomenat main.js, crea la funció crearOrdinadors().<br>
+            
+            Dintre d'aquesta funció, demanarem a l'usuari mitjançant promtps les dades de dos ordinadors.<br>
+            Un cop introduïdes les dades dels dos ordinadors, crida als mètodes de la classe Ordinador per comprovar que funcionen correctament.</div>
+        <div id="subenunciat"><p><br></p>
+        <button id="botonAnadir" onclick="crearOrdinadors()">CREAR NUEVO</button><br>
+        <div id="pc1" style="display: inline">
+            <h3>ORDENADOR 1
+                <button id="botonVer1" onclick="verInfo(1)">VER DATOS</button>
+                <button id="botonEjecutar1" onclick="ejecutarPrograma(1)">EJECUTAR</button>
+            </h3>
+        <p>MARCA
+            <span id="marca1"></span>
+            <button id="botonConsMarc1" onclick="consultarMarca(1)">CONSULTAR</button>
+            </p>
+        <p>MODELO
+            <span id="modelo1"></span>
+            <button id="botonConsModel1" onclick="consultarModelo(1)">CONSULTAR</button>
+            </p>
+        <p>PROCESADOR
+            <span id="procesador1"></span>
+            <button id="botonConsProc1" onclick="consultarProcesador(1)">CONSULTAR</button>
+            <button id="botonCambProc1" onclick="cambiarProcesador(1)">CAMBIAR</button>
+            </p>
+        <p>RAM
+            <span id="ram1"></span>
+            <button id="botonConsRam1" onclick="consultarRam(1)">CONSULTAR</button>
+            <button id="botonCambRam1" onclick="cambiarRam(1)">CAMBIAR</button>
+            </p>
+        <p>MEMORIA
+            <span id="memoria1"></span>
+            <button id="botonConsMemo1" onclick="consultarMemoria(1)">CONSULTAR</button>
+            <button id="botonCambMemo1" onclick="cambiarMemoria(1)">CAMBIAR</button>
+            </p>
+        </div>
+        <div id="pc2" style="display: inline">
+            <h3>ORDENADOR 2
+                <button id="botonVer2" onclick="verInfo(2)">VER DATOS</button>
+                <button id="botonEjecutar2" onclick="ejecutarPrograma(2)">EJECUTAR</button>
+            </h3>
+        <p>MARCA
+            <span id="marca2"></span>
+            <button id="botonConsMarc2" onclick="consultarMarca(2)">CONSULTAR</button>
+            </p>
+        <p>MODELO
+            <span id="modelo2"></span>
+            <button id="botonConsModel2" onclick="consultarModelo(2)">CONSULTAR</button>
+            </p>
+        <p>PROCESADOR
+            <span id="procesador2"></span>
+            <button id="botonConsProc2" onclick="consultarProcesador(2)">CONSULTAR</button>
+            <button id="botonCambProc2" onclick="cambiarProcesador(2)">CAMBIAR</button>
+            </p>
+        <p>RAM
+            <span id="ram2"></span>
+            <button id="botonConsRam2" onclick="consultarRam(2)">CONSULTAR</button>
+            <button id="botonCambRam2" onclick="cambiarRam(2)">CAMBIAR</button>
+            </p>
+        <p>MEMORIA
+            <span id="memoria2"></span>
+            <button id="botonConsMemo2" onclick="consultarMemoria(2)">CONSULTAR</button>
+            <button id="botonCambMemo2" onclick="cambiarMemoria(2)">CAMBIAR</button>
+            </p>
+        </div>
+    
+    <script>//"use strict";</script>
+    <script src="./JS/ordinador.js"></script>
+    <script src="./JS/main.js"></script>
+    </body>
+</html>

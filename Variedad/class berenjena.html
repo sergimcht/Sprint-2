@@ -1,0 +1,68 @@
+<html>
+    <head>
+    </head>
+    <body>
+            <!--<input type="text" id="berenjena" />  -->
+            <select name="berenjena" id="berenjena">
+                <option hidden selected>- - -</option>
+                <option value="Robertajena">Robertajena</option>
+                <option value="Ivanjena">Ivanjena</option>
+                <option value="Arturojena">Arturojena</option>
+                <option value="Nereajena">Nereajena</option>
+                <option value="Miriamjena">Miriamjena</option>
+                <option value="Albertojena">Albertojena</option>
+            </select>
+            <button id=presentar onclick="presentar()">PRESENTAR</button>
+            <input type="number" min="0" max="10" id="nota" />
+            <button id=puntuar onclick="puntuar()">PUNTUAR</button><br><br>
+            <p id="texto"></p>
+        <script>
+            let arrayBerenjenas = [];
+
+            class berenjenas {
+                constructor(imagen, nombre, title, descripcion) {
+                    this.imagen = imagen;
+                    this.nombre = nombre;
+                    this.title = title;
+                    this.descripcion = descripcion;
+                }
+                presentarBerenjena() {
+                    return "Hola, te presento a " + this.nombre + ". Yo la definiría como " + this.descripcion;
+                }
+                puntuarBerenjena(nota) {
+                    return "La berenjena llamada " + this.nombre + " se ha puntuado con un " + nota + ".";
+                }
+            }
+
+            let robertajena = new berenjenas("1.jpg", "Robertajena", "Robertajena, la berenjena simpática.", "Robertajena, la berenjena simpática. Mírala qué maja.");
+            let ivanjena = new berenjenas("2.jpg", "Ivanjena", "Ivanjena, la berenjena agresiva.", "Ivanjena, la berenjena agresiva. Míralo qué chulo él.");
+            let arturojena = new berenjenas("3.jpg", "Arturojena", "Arturojena, la berenjena feliz.", "Arturojena, la berenjena feliz. Míralo el tío, que agustísimo está.");
+            let nereajena = new berenjenas("4.jpg", "Nereajena", "Nereajena, la berenjena comodona.", "Nereajena, la berenjena comodona. Mírala lo pancha que está la tía.");
+            let miriamjena = new berenjenas("5.jpg", "Miriamjena", "Miriamjena, la berenjena cool.", "Miriamjena, la berenjena cool. Mírala qué guasona la tia con sus gafas to guapas.");
+            let albertojena  = new berenjenas("6.jpg", "Albertojena", "Albertojena, la berenjena preciosa.", "Albertojena, la berenjena preciosa. El más guapo del país de las berenjenas.");
+
+            arrayBerenjenas.push(robertajena, ivanjena, arturojena, nereajena, miriamjena, albertojena);
+
+            function getBerenjena() {
+                let berenjena = (document.getElementById("berenjena").value);
+                let i;
+
+                for (i = 0; i < arrayBerenjenas.length; i++) {
+                    if (arrayBerenjenas[i].nombre == berenjena) {
+                        return arrayBerenjenas[i];
+                    }
+                }
+            }
+
+            function puntuar() {
+                let nota = Number(document.getElementById("nota").value);
+                document.getElementById("texto").innerHTML = getBerenjena().puntuarBerenjena(nota);
+            }
+
+            function presentar() {
+                document.getElementById("texto").innerHTML = getBerenjena().presentarBerenjena();
+            }
+console.log(arrayBerenjenas)
+        </script>
+    </body>
+

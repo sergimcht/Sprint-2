@@ -1,0 +1,44 @@
+<html>
+    <head>
+        (M5) Exercici 5
+    </head>
+    <body>
+        <p>Hi ha un total de 5 beques, que s'adjudicaran segons l'ordre en que s'apuntin les persones.<br>Un 
+        cop estiguin adjudicades i no quedi ninguna, es publicaran els noms de les persones que les han rebut.<br>
+        A l'alumne se li assigna una beca si és major d’edat i si té un títol universitari. O també se li assigna una beca si l’alumne està a l’atur. </p>
+        
+        <p>Començar a introduïr dades: <input type="button" onClick="mostrar()" Value="Començar"/></p>
+        <p id="frase"></p>
+          
+    <script>
+        function mostrar() {
+
+            let nom, edat, titol, titolx, atur, aturx, contenido, i;
+
+            i=1;
+            contenido = "<b>Les persones amb beca son:</b><br />";
+            
+            while (i <= 5) {    
+                nom = prompt("Beca numero " + i + ". Introdueix el teu nom:", "Nom i cognoms");
+                edat = prompt("Quina és la teva edat?", "Edat");
+                titolx = prompt("Tens un títol universitari? Respón S/N", "S/N");
+                aturx = prompt("Et trobes a l'atur? Respón S/N", "S/N");
+                titol = titolx.toUpperCase();
+                atur = aturx.toUpperCase();
+                                
+                console.log(nom, edat, titol, atur);
+
+                if ((edat>=18 && titol=="S") || atur=="S") { 
+                    alert("La persona introduïda té beca!");
+                    contenido += i + ". " + nom + "<br />";
+                    i += 1;
+                } else {
+                    alert("La persona introduïda NO té beca!");
+                }
+            }
+            alert("Aquesta era la ultima!!!");
+            document.getElementById("frase").innerHTML=contenido;
+        }           
+    </script>
+    </body>
+</html>

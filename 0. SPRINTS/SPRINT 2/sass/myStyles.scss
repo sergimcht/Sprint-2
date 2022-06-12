@@ -1,0 +1,138 @@
+@import "../sass/custom";
+
+// Override hover color for navbar links
+.navbar-light {
+  .navbar-nav {
+    .nav-link {
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+// Override bootstrap tabs styling for the feature section
+.nav-tabs {
+  .nav-link.active {
+    color: #495057;
+    border: none;
+    border-bottom: 4px solid $secondary;
+  }
+  .nav-link {
+    color: lighten(#495057, 30);
+    border: none;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+// Style for the grey button in the Hero section
+.cta-buttons {
+  .btn-grey {
+    color: #495057;
+    &:hover {
+      border: 1px solid #949da5;
+    }
+  }
+}
+
+// Override styles for the FAQ/Accordion section
+
+.accordion-button {
+  &:hover {
+    color: $secondary;
+  }
+
+  &:not(.collapsed) {
+    background-color: white;
+    color: #495057;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &::after {
+    background-image: url("../images/icon-arrow.svg");
+  }
+
+  &:not(.collapsed)::after {
+    background-image: url("../images/icon-arrow-collapsed.svg");
+  }
+}
+
+.accordion-item {
+  border: none;
+  border-top: 1px solid #949da5;
+  border-bottom: 1px solid #949da5;
+}
+
+// Override styles buttons hover effect
+.btn-primary {
+  &:hover {
+    background-color: transparent;
+    color: $primary;
+  }
+}
+.btn-secondary {
+  color: white;
+  &:hover {
+    background-color: white;
+    color: $secondary;
+  }
+}
+
+//Footer section links & social media icons color
+
+footer {
+  .nav-link {
+    color: white;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.socials {
+  .nav-link {
+    svg {
+      fill: white;
+
+      &:hover {
+        fill: $secondary;
+      }
+    }
+  }
+}
+
+//Error message styling for the form element in the footer
+.was-validated {
+  .form-control:invalid {
+    border-color: $secondary;
+    background-image: url("../images/icon-error.svg");
+  }
+}
+
+.invalid-tooltip {
+  background-color: $secondary;
+  padding-top: 0.2rem;
+  font-style: italic;
+  color: white;
+}
+
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus {
+  background-color: $secondary;
+  color: white;
+}
+
+// Submit button has a bit of top margin up until 349px, this prevents the error message to be displayed on top of the button
+
+@media (max-width: 349px) {
+  .btn[type="submit"] {
+    margin-top: 1.1rem;
+  }
+}
